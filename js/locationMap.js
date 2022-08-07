@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
 function locStartup(){
     console.log("Locations Array: ");
     console.log(locations);
-    displayLocation("locations[4][1][4][0]"); //This draws the markers on the basement image when the page loads
+    displayLocation("locations"); //This draws the markers on the basement image when the page loads
 }
 var canvas = document.getElementById("locationCanvas");
 var ctx = canvas.getContext("2d");
@@ -470,7 +470,7 @@ var clickTarget = "";
 var activePage = window.location.href.split("/").pop();
 if(activePage == "Astradux.html" || activePage == ""){
     setTimeout(()=>{
-        displayLocation("locations[4][1][4][0]");
+        displayLocation("locations");
     }, 1);
     try{
         $("#transBox_loc1")[0].onclick = ()=>{clickTarget = "loc1";}
