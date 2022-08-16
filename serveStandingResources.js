@@ -43,7 +43,7 @@ var connections = 0;
 const data_uri = "mongodb+srv://respect123:Pulsar78@cluster0.j2ptc.mongodb.net/?retryWrites=true&w=majority";
 var astrasystem = "";
 const astrasystem_client = new MongoClient(data_uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-const imgs1_uri = "mongodb+srv://Napoleon1234:socialEntreprenuer78@cluster0.1qjlnlw.mongodb.net/?retryWrites=true&w=majority";
+const imgs1_uri = "mongodb+srv://Napoleon78:socialEntreprenuer78@cluster0.1qjlnlw.mongodb.net/?retryWrites=true&w=majority";
 var imagesCluster1 = "";
 const imagesCluster1_client = new MongoClient(imgs1_uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -52,11 +52,13 @@ function connectToDBs(){
     astrasystem_client.connect((res,err)=>{
         console.log("~Astrasystem Connection Established~");
         astrasystem = astrasystem_client.db(account);
+        console.log("res: "+res+" err: "+err);
         connections++;
         connectionTreshold();
     });
     imagesCluster1_client.connect((res,err)=>{
         console.log("~imagesCluster1 Connection Established~");
+        console.log("res: "+res+" err: "+err);
         imagesCluster1 = imagesCluster1_client.db("database").collection("collection");
         connections++;
         connectionTreshold();
