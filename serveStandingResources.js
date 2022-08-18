@@ -97,7 +97,7 @@ async function generateImg(imgName, imgURI, imgPath){
             console.log("v/ Location Image Regeneration Complete!\n");
             regenerateInvFiles();
         }
-    });
+    });//
 }
 function regenerateInvFiles(){
     astrasystem.collection("INVENTORY_Files").find().toArray((error, invFiles)=>{
